@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Siems Everest- Countdown</title>
+    <!-- Font Awesome Doesnt work offline.-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+   <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Start your project here-->
+<div class="view">
+    <div style="position: absolute;top:0%;left:21%;z-index: 10" class="hm-black-light">
+    <!-- Logo is also static. Doesnt change -->
+    	<img src="img/logo.png" id="logoimg" height="30%" width="80%">
+    </div>
+   <!-- Background Image. Change on will. Only Static -->
+<div class="hm-black-strong" style="position: relative">
+    <img src="img/everest.jpg" style="height: 100vh;width: 100vw" class="img-fluid" alt="">
+
+    <!-- Contains CountDown Timer. -->
+    <div class="mask flex-center">
+        
+
+        <div class="middle text-white" id="count">
+        
+        <br>
+	    	<div class="row">
+	    		<div class="col-xs-3" style="padding: 10px;margin-left: 10px">
+	    			<h3>
+	    				<span id="days" style="font-weight: bold;font-family: courier"></span>
+	    			</h3>
+	    			<br>
+	    			<h4 style="font-weight: bold;font-family: courier">Days</h4>
+	    		</div>
+	    		<div class="col-xs-3" style="padding: 10px">
+	    				<h3>
+	    				<span id="hours" style="font-weight: bold;font-family: courier"></span>
+	    			</h3>
+	    			<br>
+	    			<h4 style="font-weight: bold;font-family: courier">Hous</h4>
+	    		</div>
+	    		<div class="col-xs-3" style="padding: 10px">
+	    				<h3>
+	    				<span id="minutes" style="font-weight: bold;font-family: courier"></span>
+	    			</h3>
+	    			<br>
+	    			<h4 style="font-weight: bold;font-family: courier">Minutes</h4>
+	    		</div>
+	    		<div class="col-xs-3" style="padding: 10px">
+	    				<h3>
+	    				<span id="seconds" style="font-weight: bold;font-family: courier"></span>
+	    			</h3>
+	    			<br>
+	    			<h4 style="font-weight: bold;font-family: courier">Seconds</h4>
+	    		</div>			
+
+	    	</div>
+
+	    	<hr>
+	    	
+	  </div>
+
+
+		<!--Footer-->
+        <!-- Facebook icon -->
+		<div style="position:absolute;bottom:1px">
+			<span style="padding: 10px"><a href="https://www.facebook.com/rnsdkl"><i class="fa fa-facebook-f fa-2x" style="color:" aria-hidden="true"></i></a></span>
+		<!-- Phone Icon -->
+			<span style="padding: 10px"><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Contact us:" data-content="9851219115 (Ronash Dhakal) "><i class="fa fa-phone fa-2x" aria-hidden="true"></i></a></span>
+                
+
+
+		</div>
+        <!-- End of Footer. -->
+    </div>
+
+
+            
+</div>
+
+
+
+
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script type="text/javascript">
+    	$(".view .mask").removeClass("waves-effect waves-light");
+
+                	$(function () {
+                        $('[data-toggle="popover"]').popover()
+                     })
+                	$('.popover-dismiss').popover({
+                         trigger: 'focus'
+                    })
+         
+</script>
+
+<script>
+// Setting the Date. This below is the best practice : Month name, and date and year. 
+var countDownDate = new Date("Sep 25, 2017 00:00:00").getTime();
+
+//Updating time every second
+var countdownfunction = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    //setting date and time.
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+    
+    //if expired. lets avoid this outcome tho :D 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+/* YOUR CUSTOM STYLES */
+
+#count
+		{
+			position: absolute;top:65%;left:35%;text-align: center;
+		}
+
+	/*media queries*/
+
+	@media only screen and (max-width: 400px) {
+				h3{
+					font-size: 14px;
+				}
+				h4
+				{
+					font-size: 12px;
+				}
+
+				#logoimg
+				{
+					height: 300px;
+					width: 70%;
+					margin-top: 100px;
+				}
+
+				#count
+				{
+					position: absolute;top:65%;left:18%;text-align: center"
+				}
+	}
+
+	@media only screen and (min-width: 400px) and (max-width:600px) {
+				h3{
+					font-size: 14px;
+				}
+				h4
+				{
+					font-size: 12px;
+				}
+
+				#logoimg
+				{
+					height: 300px;
+					width: 70%;
+					margin-top: 100px;
+				}
+
+				#count
+				{
+					position: absolute;top:65%;left:25%;text-align: center;
+				}
+	}
+
+	@media only screen and (min-width: 600px) and (max-width:768px) {
+				h3{
+					font-size: 28px;
+				}
+				h4
+				{
+					font-size: 26px;
+				}
+
+				#logoimg
+				{
+					height: 400px;
+					width: 82%;
+					margin-top: 100px;
+				}
+
+				#count
+				{
+					position: absolute;top:65%;left:25%;text-align: center;
+				}
+	}
